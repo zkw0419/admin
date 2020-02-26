@@ -20,8 +20,8 @@ public class OrderController {
         return null;
     }
 
-    @GetMapping("/getInvoice")
-    public OrderInvoiceShowOutDTO getInvoice(@RequestParam Long orderId){
+    @GetMapping("/getInvoiceInfo")
+    public OrderInvoiceShowOutDTO getInvoiceInfo(@RequestParam Long orderId){
         return null;
     }
     @GetMapping("/getShipInfo")
