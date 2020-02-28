@@ -1,13 +1,11 @@
 package io.zkw.jcartadministrationback.dto.in;
 
 public class ProductSearchInDTO {
-
     private String productCode;
     private String productName;
     private Double price;
     private Integer stockQuantity;
     private Byte status;
-    private Integer pageNum;
 
     public String getProductCode() {
         return productCode;
@@ -47,13 +45,5 @@ public class ProductSearchInDTO {
 
     public void setStatus(Byte status) {
         this.status = status;
-    }
-
-    public Integer getPageNum() {
-        return pageNum;
-    }
-
-    public void setPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
     }
 }

@@ -15,6 +15,7 @@ import java.util.UUID;
 @RequestMapping("/image")
 @CrossOrigin
 public class ImageController {
+
     private List<String> imageExts= Arrays.asList("jpg","jpeg","png");
 
     @PostMapping("/upload")
@@ -37,6 +38,5 @@ public class ImageController {
         }
         return filename;
     }
-
 
 }

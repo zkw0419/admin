@@ -15,26 +15,29 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/product")
+@CrossOrigin
 public class ProductController {
 
     @Autowired
     private ProductService productService;
 
     @GetMapping("/search")
-    public PageOutDTO<ProductListOutDTO> search(ProductSearchInDTO productSearchInDTO,@RequestParam(required = false,defaultValue = "1") Integer pageNum){
+    public PageOutDTO<ProductListOutDTO> search(ProductSearchInDTO productSearchInDTO,
+                                                @RequestParam(required = false, defaultValue = "1") Integer pageNum){
         Page<ProductListOutDTO> page = productService.search(pageNum);
+
         PageOutDTO<ProductListOutDTO> pageOutDTO = new PageOutDTO<>();
         pageOutDTO.setTotal(page.getTotal());
         pageOutDTO.setPageSize(page.getPageSize());
-        pageOutDTO.setPageName(page.getPageNum());
+        pageOutDTO.setPageNum(page.getPageNum());
         pageOutDTO.setList(page);
+
         return pageOutDTO;
     }
 
     @GetMapping("/getById")
     public ProductShowOutDTO getById(@RequestParam Integer productId){
         ProductShowOutDTO productShowOutDTO = productService.getById(productId);
-
         return productShowOutDTO;
     }
 
@@ -43,10 +46,12 @@ public class ProductController {
         Integer productId = productService.create(productCreateInDTO);
         return productId;
     }
+
     @PostMapping("/update")
     public void update(@RequestBody ProductUpdateInDTO productUpdateInDTO){
         productService.update(productUpdateInDTO);
     }
+
     @PostMapping("/delete")
     public void delete(@RequestBody Integer productId){
         productService.delete(productId);
@@ -56,6 +61,5 @@ public class ProductController {
     public void batchDelete(@RequestBody List<Integer> productIds){
         productService.batchDelete(productIds);
     }
-
 
 }

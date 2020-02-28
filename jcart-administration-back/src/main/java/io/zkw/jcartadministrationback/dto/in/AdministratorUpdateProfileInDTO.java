@@ -1,19 +1,18 @@
 package io.zkw.jcartadministrationback.dto.in;
 
 public class AdministratorUpdateProfileInDTO {
-
-    private String relName;
+    private String realName;
     private String email;
     private String avatarUrl;
     private String password;
     private Byte status;
 
-    public String getRelName() {
-        return relName;
+    public String getRealName() {
+        return realName;
     }
 
-    public void setRelName(String relName) {
-        this.relName = relName;
+    public void setRealName(String realName) {
+        this.realName = realName;
     }
 
     public String getEmail() {

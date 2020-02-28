@@ -7,7 +7,7 @@ public class CustomerShowOutDTO {
     private String avatarUrl;
     private String mobile;
     private String email;
-    private String status;
+    private Byte status;
     private Long createTimestamp;
     private Boolean newsSubscribed;
     private Integer rewordPoints;
@@ -61,11 +61,11 @@ public class CustomerShowOutDTO {
         this.email = email;
     }
 
-    public String getStatus() {
+    public Byte getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Byte status) {
         this.status = status;
     }
 

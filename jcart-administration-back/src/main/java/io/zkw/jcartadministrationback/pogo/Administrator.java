@@ -1,4 +1,4 @@
-package io.zkw.jcartadministrationback.po;
+package io.zkw.jcartadministrationback.pogo;
 
 import java.util.Date;
 

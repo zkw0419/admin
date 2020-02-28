@@ -1,11 +1,11 @@
 package io.zkw.jcartadministrationback.dto.in;
 
 public class AdministratorCreateInDTO {
-
     private String username;
     private String password;
     private String realName;
     private String email;
+    private String avatarUrl;
     private Byte status;
 
     public String getUsername() {
@@ -38,6 +38,14 @@ public class AdministratorCreateInDTO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 
     public Byte getStatus() {

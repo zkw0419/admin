@@ -1,7 +1,6 @@
 package io.zkw.jcartadministrationback.service.impl;
 
 import com.alibaba.fastjson.JSON;
-
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import io.zkw.jcartadministrationback.dao.ProductDetailMapper;
@@ -10,14 +9,15 @@ import io.zkw.jcartadministrationback.dto.in.ProductCreateInDTO;
 import io.zkw.jcartadministrationback.dto.in.ProductUpdateInDTO;
 import io.zkw.jcartadministrationback.dto.out.ProductListOutDTO;
 import io.zkw.jcartadministrationback.dto.out.ProductShowOutDTO;
-import io.zkw.jcartadministrationback.po.Product;
-import io.zkw.jcartadministrationback.po.ProductDetail;
+import io.zkw.jcartadministrationback.pogo.Product;
+import io.zkw.jcartadministrationback.pogo.ProductDetail;
 import io.zkw.jcartadministrationback.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
 @Service
 public class ProductServiceImpl implements ProductService {
 
@@ -83,12 +83,12 @@ public class ProductServiceImpl implements ProductService {
         List<String> otherPicUrls = productUpdateInDTO.getOtherPicUrls();
         productDetail.setOtherPicUrls(JSON.toJSONString(otherPicUrls));
         productDetailMapper.updateByPrimaryKeySelective(productDetail);
+
     }
 
     @Override
     @Transactional
     public void delete(Integer productId) {
-
         productMapper.deleteByPrimaryKey(productId);
         productDetailMapper.deleteByPrimaryKey(productId);
     }
@@ -102,10 +102,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Page<ProductListOutDTO> search(Integer pageNum) {
-        PageHelper.startPage(pageNum,10);
+        PageHelper.startPage(pageNum, 10);
         Page<ProductListOutDTO> page = productMapper.search();
-
-
         return page;
     }
 
@@ -130,7 +128,6 @@ public class ProductServiceImpl implements ProductService {
         String otherPicUrlsJson = productDetail.getOtherPicUrls();
         List<String> otherPicUrls = JSON.parseArray(otherPicUrlsJson, String.class);
         productShowOutDTO.setOtherPicUrls(otherPicUrls);
-
 
         return productShowOutDTO;
     }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="io.zkw.jcartadministrationback.dao.AdministratorMapper">
-  <resultMap id="BaseResultMap" type="io.zkw.jcartadministrationback.po.Administrator">
+  <resultMap id="BaseResultMap" type="io.zkw.jcartadministrationback.pogo.Administrator">
     <id column="administrator_id" jdbcType="INTEGER" property="administratorId" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="real_name" jdbcType="VARCHAR" property="realName" />
@@ -18,23 +18,23 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from jcart_administrator
+    from administrator
     where administrator_id = #{administratorId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from jcart_administrator
+    delete from administrator
     where administrator_id = #{administratorId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="io.zkw.jcartadministrationback.po.Administrator">
-    insert into jcart_administrator (administrator_id, username, real_name, 
+  <insert id="insert" parameterType="io.zkw.jcartadministrationback.pogo.Administrator">
+    insert into administrator (administrator_id, username, real_name,
       email, encrypted_password, status, 
       create_time, avatar_url)
     values (#{administratorId,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{realName,jdbcType=VARCHAR}, 
       #{email,jdbcType=VARCHAR}, #{encryptedPassword,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, 
       #{createTime,jdbcType=TIMESTAMP}, #{avatarUrl,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="io.zkw.jcartadministrationback.po.Administrator">
-    insert into jcart_administrator
+  <insert id="insertSelective" parameterType="io.zkw.jcartadministrationback.pogo.Administrator">
+    insert into administrator
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="administratorId != null">
         administrator_id,
@@ -88,8 +88,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="io.zkw.jcartadministrationback.po.Administrator">
-    update jcart_administrator
+  <update id="updateByPrimaryKeySelective" parameterType="io.zkw.jcartadministrationback.pogo.Administrator">
+    update administrator
     <set>
       <if test="username != null">
         username = #{username,jdbcType=VARCHAR},
@@ -115,8 +115,8 @@
     </set>
     where administrator_id = #{administratorId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="io.zkw.jcartadministrationback.po.Administrator">
-    update jcart_administrator
+  <update id="updateByPrimaryKey" parameterType="io.zkw.jcartadministrationback.pogo.Administrator">
+    update administrator
     set username = #{username,jdbcType=VARCHAR},
       real_name = #{realName,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},

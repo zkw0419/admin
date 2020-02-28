@@ -1,12 +1,11 @@
 package io.zkw.jcartadministrationback.dto.out;
 
 public class CustomerListOutDTO {
-
     private Integer customerId;
     private String username;
     private String realName;
-    private String email;
     private String mobile;
+    private String email;
     private Byte status;
     private Long createTimestamp;
 
@@ -34,20 +33,20 @@ public class CustomerListOutDTO {
         this.realName = realName;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getMobile() {
         return mobile;
     }
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Byte getStatus() {

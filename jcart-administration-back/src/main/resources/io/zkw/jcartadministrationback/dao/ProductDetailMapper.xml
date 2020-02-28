@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="io.zkw.jcartadministrationback.dao.ProductDetailMapper">
-  <resultMap id="BaseResultMap" type="io.zkw.jcartadministrationback.po.ProductDetail">
+  <resultMap id="BaseResultMap" type="io.zkw.jcartadministrationback.pogo.ProductDetail">
     <id column="product_id" jdbcType="INTEGER" property="productId" />
     <result column="other_pic_urls" jdbcType="VARCHAR" property="otherPicUrls" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="io.zkw.jcartadministrationback.po.ProductDetail">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="io.zkw.jcartadministrationback.pogo.ProductDetail">
     <result column="description" jdbcType="LONGVARCHAR" property="description" />
   </resultMap>
   <sql id="Base_Column_List">
@@ -19,21 +19,21 @@
     <include refid="Base_Column_List" />
     ,
     <include refid="Blob_Column_List" />
-    from jcart_product_detail
+    from product_detail
     where product_id = #{productId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from jcart_product_detail
+    delete from product_detail
     where product_id = #{productId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="io.zkw.jcartadministrationback.po.ProductDetail">
-    insert into jcart_product_detail (product_id, other_pic_urls, description
+  <insert id="insert" parameterType="io.zkw.jcartadministrationback.pogo.ProductDetail">
+    insert into product_detail (product_id, other_pic_urls, description
       )
     values (#{productId,jdbcType=INTEGER}, #{otherPicUrls,jdbcType=VARCHAR}, #{description,jdbcType=LONGVARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="io.zkw.jcartadministrationback.po.ProductDetail">
-    insert into jcart_product_detail
+  <insert id="insertSelective" parameterType="io.zkw.jcartadministrationback.pogo.ProductDetail">
+    insert into product_detail
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="productId != null">
         product_id,
@@ -57,8 +57,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="io.zkw.jcartadministrationback.po.ProductDetail">
-    update jcart_product_detail
+  <update id="updateByPrimaryKeySelective" parameterType="io.zkw.jcartadministrationback.pogo.ProductDetail">
+    update product_detail
     <set>
       <if test="otherPicUrls != null">
         other_pic_urls = #{otherPicUrls,jdbcType=VARCHAR},
@@ -69,21 +69,21 @@
     </set>
     where product_id = #{productId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="io.zkw.jcartadministrationback.po.ProductDetail">
-    update jcart_product_detail
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="io.zkw.jcartadministrationback.pogo.ProductDetail">
+    update product_detail
     set other_pic_urls = #{otherPicUrls,jdbcType=VARCHAR},
       description = #{description,jdbcType=LONGVARCHAR}
     where product_id = #{productId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="io.zkw.jcartadministrationback.po.ProductDetail">
-    update jcart_product_detail
+  <update id="updateByPrimaryKey" parameterType="io.zkw.jcartadministrationback.pogo.ProductDetail">
+    update product_detail
     set other_pic_urls = #{otherPicUrls,jdbcType=VARCHAR}
     where product_id = #{productId,jdbcType=INTEGER}
   </update>
 
 <!--  custom-->
   <delete id="batchDelete">
-    delete from jcart_product_detail
+    delete from product_detail
     where product_id in
     <foreach item="item" index="index" collection="productIds"
              open="(" separator="," close=")">

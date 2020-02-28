@@ -1,7 +1,6 @@
 package io.zkw.jcartadministrationback.dto.out;
 
 public class ReturnListOutDTO {
-
     private Integer returnId;
     private Long orderId;
     private Integer customerId;

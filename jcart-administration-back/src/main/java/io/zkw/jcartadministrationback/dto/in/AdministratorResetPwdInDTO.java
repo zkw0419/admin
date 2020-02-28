@@ -1,7 +1,6 @@
 package io.zkw.jcartadministrationback.dto.in;
 
-public class AdministratorRestPwdDTO {
-
+public class AdministratorResetPwdInDTO {
     private String email;
     private String resetCode;
     private String newPwd;

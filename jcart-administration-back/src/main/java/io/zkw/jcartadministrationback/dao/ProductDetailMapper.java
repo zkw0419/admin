@@ -1,6 +1,6 @@
 package io.zkw.jcartadministrationback.dao;
 
-import io.zkw.jcartadministrationback.po.ProductDetail;
+import io.zkw.jcartadministrationback.pogo.ProductDetail;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -22,6 +22,7 @@ public interface ProductDetailMapper {
 
     int updateByPrimaryKey(ProductDetail record);
 
+//    custom
 
     int batchDelete(@Param("productIds") List<Integer> productIds);
 

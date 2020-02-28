@@ -9,13 +9,6 @@ public class OrderListOutDTO {
     private Long createTimestamp;
     private Long updateTimestamp;
 
-    public Long getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
-    }
 
     public Integer getCustomerId() {
         return customerId;
@@ -31,14 +24,6 @@ public class OrderListOutDTO {
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
-    }
-
-    public Byte getStatus() {
-        return status;
-    }
-
-    public void setStatus(Byte status) {
-        this.status = status;
     }
 
     public Double getTotalPirce() {
@@ -63,5 +48,21 @@ public class OrderListOutDTO {
 
     public void setUpdateTimestamp(Long updateTimestamp) {
         this.updateTimestamp = updateTimestamp;
+    }
+
+    public Byte getStatus() {
+        return status;
+    }
+
+    public void setStatus(Byte status) {
+        this.status = status;
+    }
+
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 }

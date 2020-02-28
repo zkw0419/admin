@@ -1,4 +1,4 @@
-package io.zkw.jcartadministrationback.po;
+package io.zkw.jcartadministrationback.pogo;
 
 public class ProductDetail {
     private Integer productId;

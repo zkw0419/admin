@@ -1,6 +1,6 @@
 package io.zkw.jcartadministrationback.dao;
 
-import io.zkw.jcartadministrationback.po.Address;
+import io.zkw.jcartadministrationback.pogo.Address;
 
 public interface AddressMapper {
     int deleteByPrimaryKey(Integer addressId);

@@ -3,7 +3,7 @@ package io.zkw.jcartadministrationback.dto.out;
 public class ProductListOutDTO {
     private Integer productId;
     private String productCode;
-    private String priductName;
+    private String productName;
     private Double price;
     private Double discount;
     private Integer stockQuantity;
@@ -26,12 +26,12 @@ public class ProductListOutDTO {
         this.productCode = productCode;
     }
 
-    public String getPriductName() {
-        return priductName;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setPriductName(String priductName) {
-        this.priductName = priductName;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public Double getPrice() {

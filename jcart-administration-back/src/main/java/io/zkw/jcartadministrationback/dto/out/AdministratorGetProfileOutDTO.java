@@ -1,8 +1,7 @@
 package io.zkw.jcartadministrationback.dto.out;
 
 public class AdministratorGetProfileOutDTO {
-
-    private Integer AdministratorId;
+    private Integer administratorId;
     private String username;
     private String realName;
     private String email;
@@ -11,11 +10,11 @@ public class AdministratorGetProfileOutDTO {
     private Long createTimestamp;
 
     public Integer getAdministratorId() {
-        return AdministratorId;
+        return administratorId;
     }
 
     public void setAdministratorId(Integer administratorId) {
-        AdministratorId = administratorId;
+        this.administratorId = administratorId;
     }
 
     public String getUsername() {

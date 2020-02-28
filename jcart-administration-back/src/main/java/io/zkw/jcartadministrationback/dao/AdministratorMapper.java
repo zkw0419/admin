@@ -1,6 +1,6 @@
 package io.zkw.jcartadministrationback.dao;
 
-import io.zkw.jcartadministrationback.po.Administrator;
+import io.zkw.jcartadministrationback.pogo.Administrator;
 
 public interface AdministratorMapper {
     int deleteByPrimaryKey(Integer administratorId);

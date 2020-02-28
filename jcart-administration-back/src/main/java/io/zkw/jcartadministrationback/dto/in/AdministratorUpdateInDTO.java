@@ -1,7 +1,6 @@
 package io.zkw.jcartadministrationback.dto.in;
 
 public class AdministratorUpdateInDTO {
-
     private Integer administratorId;
     private String realName;
     private String password;

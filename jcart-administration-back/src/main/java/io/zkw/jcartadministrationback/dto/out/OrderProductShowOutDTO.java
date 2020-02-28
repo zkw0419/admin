@@ -5,7 +5,7 @@ public class OrderProductShowOutDTO {
     private String productCode;
     private String productName;
     private Integer quantity;
-    private Double unitprice;
+    private Double unitPrice;
     private Integer unitRewordPoints;
 
     public Integer getProductId() {
@@ -40,12 +40,12 @@ public class OrderProductShowOutDTO {
         this.quantity = quantity;
     }
 
-    public Double getUnitprice() {
-        return unitprice;
+    public Double getUnitPrice() {
+        return unitPrice;
     }
 
-    public void setUnitprice(Double unitprice) {
-        this.unitprice = unitprice;
+    public void setUnitPrice(Double unitPrice) {
+        this.unitPrice = unitPrice;
     }
 
     public Integer getUnitRewordPoints() {

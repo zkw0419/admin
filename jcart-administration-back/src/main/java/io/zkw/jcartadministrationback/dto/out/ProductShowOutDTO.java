@@ -3,7 +3,6 @@ package io.zkw.jcartadministrationback.dto.out;
 import java.util.List;
 
 public class ProductShowOutDTO {
-
     private Integer productId;
     private String productCode;
     private String productName;

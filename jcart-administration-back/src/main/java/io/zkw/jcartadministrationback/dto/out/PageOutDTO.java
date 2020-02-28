@@ -3,19 +3,11 @@ package io.zkw.jcartadministrationback.dto.out;
 import java.util.List;
 
 public class PageOutDTO<T> {
-
     private Long total;
     private Integer pageSize;
-    private Integer pageName;
+    private Integer pageNum;
     private List<T> list;
 
-    public Long getTotal() {
-        return total;
-    }
-
-    public void setTotal(Long total) {
-        this.total = total;
-    }
 
     public Integer getPageSize() {
         return pageSize;
@@ -25,12 +17,12 @@ public class PageOutDTO<T> {
         this.pageSize = pageSize;
     }
 
-    public Integer getPageName() {
-        return pageName;
+    public Integer getPageNum() {
+        return pageNum;
     }
 
-    public void setPageName(Integer pageName) {
-        this.pageName = pageName;
+    public void setPageNum(Integer pageNum) {
+        this.pageNum = pageNum;
     }
 
     public List<T> getList() {
@@ -39,5 +31,13 @@ public class PageOutDTO<T> {
 
     public void setList(List<T> list) {
         this.list = list;
+    }
+
+    public Long getTotal() {
+        return total;
+    }
+
+    public void setTotal(Long total) {
+        this.total = total;
     }
 }

@@ -1,7 +1,6 @@
 package io.zkw.jcartadministrationback.dto.in;
 
 public class CustomerSearchInDTO {
-
     private String username;
     private String realName;
     private String mobile;

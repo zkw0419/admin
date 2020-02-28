@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="io.zkw.jcartadministrationback.dao.ProductMapper">
-  <resultMap id="BaseResultMap" type="io.zkw.jcartadministrationback.po.Product">
+  <resultMap id="BaseResultMap" type="io.zkw.jcartadministrationback.pogo.Product">
     <id column="product_id" jdbcType="INTEGER" property="productId" />
     <result column="product_code" jdbcType="VARCHAR" property="productCode" />
     <result column="product_name" jdbcType="VARCHAR" property="productName" />
@@ -31,15 +31,15 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from jcart_product
+    from product
     where product_id = #{productId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from jcart_product
+    delete from product
     where product_id = #{productId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="io.zkw.jcartadministrationback.po.Product">
-    insert into jcart_product (product_id, product_code, product_name, 
+  <insert id="insert" parameterType="io.zkw.jcartadministrationback.pogo.Product">
+    insert into product (product_id, product_code, product_name,
       product_abstract, price, discount, 
       stock_quantity, status, main_pic_url, 
       reword_points, sort_order)
@@ -48,8 +48,8 @@
       #{stockQuantity,jdbcType=INTEGER}, #{status,jdbcType=TINYINT}, #{mainPicUrl,jdbcType=VARCHAR}, 
       #{rewordPoints,jdbcType=INTEGER}, #{sortOrder,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="io.zkw.jcartadministrationback.po.Product" useGeneratedKeys="true" keyProperty="productId">
-    insert into jcart_product
+  <insert id="insertSelective" parameterType="io.zkw.jcartadministrationback.pogo.Product" useGeneratedKeys="true" keyProperty="productId">
+    insert into product
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="productCode != null">
         product_code,
@@ -115,8 +115,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="io.zkw.jcartadministrationback.po.Product">
-    update jcart_product
+  <update id="updateByPrimaryKeySelective" parameterType="io.zkw.jcartadministrationback.pogo.Product">
+    update product
     <set>
       <if test="productCode != null">
         product_code = #{productCode,jdbcType=VARCHAR},
@@ -151,8 +151,8 @@
     </set>
     where product_id = #{productId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="io.zkw.jcartadministrationback.po.Product">
-    update jcart_product
+  <update id="updateByPrimaryKey" parameterType="io.zkw.jcartadministrationback.pogo.Product">
+    update product
     set product_code = #{productCode,jdbcType=VARCHAR},
       product_name = #{productName,jdbcType=VARCHAR},
       product_abstract = #{productAbstract,jdbcType=VARCHAR},
@@ -166,8 +166,9 @@
     where product_id = #{productId,jdbcType=INTEGER}
   </update>
 
+<!--  custom-->
   <delete id="batchDelete">
-    delete from jcart_product
+    delete from product
     where product_id in
     <foreach item="item" index="index" collection="productIds"
              open="(" separator="," close=")">
@@ -178,7 +179,7 @@
   <select id="search" resultMap="ProductListOutDTO">
     select
     <include refid="Base_Column_List" />
-    from jcart_product
+    from product
   </select>
 
 </mapper>

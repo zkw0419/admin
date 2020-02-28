@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="io.zkw.jcartadministrationback.dao.CustomerMapper">
-  <resultMap id="BaseResultMap" type="io.zkw.jcartadministrationback.po.Customer">
+  <resultMap id="BaseResultMap" type="io.zkw.jcartadministrationback.pogo.Customer">
     <id column="customer_id" jdbcType="INTEGER" property="customerId" />
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="real_name" jdbcType="VARCHAR" property="realName" />
@@ -24,15 +24,15 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from jcart_customer
+    from customer
     where customer_id = #{customerId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from jcart_customer
+    delete from customer
     where customer_id = #{customerId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="io.zkw.jcartadministrationback.po.Customer">
-    insert into jcart_customer (customer_id, username, real_name, 
+  <insert id="insert" parameterType="io.zkw.jcartadministrationback.pogo.Customer">
+    insert into customer (customer_id, username, real_name,
       avatar_url, encrypted_password, mobile, 
       mobile_verified, email, email_verified, 
       status, create_time, news_subscribed, 
@@ -43,8 +43,8 @@
       #{status,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, #{newsSubscribed,jdbcType=BIT}, 
       #{rewordPoints,jdbcType=INTEGER}, #{defaultAddressId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="io.zkw.jcartadministrationback.po.Customer">
-    insert into jcart_customer
+  <insert id="insertSelective" parameterType="io.zkw.jcartadministrationback.pogo.Customer">
+    insert into customer
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="customerId != null">
         customer_id,
@@ -134,8 +134,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="io.zkw.jcartadministrationback.po.Customer">
-    update jcart_customer
+  <update id="updateByPrimaryKeySelective" parameterType="io.zkw.jcartadministrationback.pogo.Customer">
+    update customer
     <set>
       <if test="username != null">
         username = #{username,jdbcType=VARCHAR},
@@ -179,8 +179,8 @@
     </set>
     where customer_id = #{customerId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="io.zkw.jcartadministrationback.po.Customer">
-    update jcart_customer
+  <update id="updateByPrimaryKey" parameterType="io.zkw.jcartadministrationback.pogo.Customer">
+    update customer
     set username = #{username,jdbcType=VARCHAR},
       real_name = #{realName,jdbcType=VARCHAR},
       avatar_url = #{avatarUrl,jdbcType=VARCHAR},

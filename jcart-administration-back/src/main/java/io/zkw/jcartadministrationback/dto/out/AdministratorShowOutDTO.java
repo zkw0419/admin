@@ -1,7 +1,6 @@
 package io.zkw.jcartadministrationback.dto.out;
 
 public class AdministratorShowOutDTO {
-
     private Integer administratorId;
     private String username;
     private String email;

@@ -1,34 +1,34 @@
-package io.zkw.jcartadministrationback.po;
+package io.zkw.jcartadministrationback.pogo;
 
 import java.util.Date;
 
-public class OrderHistory {
-    private Long orderHistoryId;
+public class ReturnHistory {
+    private Long returnHistoryId;
 
-    private Integer orderId;
+    private Integer returnId;
 
     private Date time;
 
-    private Byte orderStatus;
+    private Byte returnStatus;
 
     private String comment;
 
     private Boolean customerNotified;
 
-    public Long getOrderHistoryId() {
-        return orderHistoryId;
+    public Long getReturnHistoryId() {
+        return returnHistoryId;
     }
 
-    public void setOrderHistoryId(Long orderHistoryId) {
-        this.orderHistoryId = orderHistoryId;
+    public void setReturnHistoryId(Long returnHistoryId) {
+        this.returnHistoryId = returnHistoryId;
     }
 
-    public Integer getOrderId() {
-        return orderId;
+    public Integer getReturnId() {
+        return returnId;
     }
 
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
+    public void setReturnId(Integer returnId) {
+        this.returnId = returnId;
     }
 
     public Date getTime() {
@@ -39,12 +39,12 @@ public class OrderHistory {
         this.time = time;
     }
 
-    public Byte getOrderStatus() {
-        return orderStatus;
+    public Byte getReturnStatus() {
+        return returnStatus;
     }
 
-    public void setOrderStatus(Byte orderStatus) {
-        this.orderStatus = orderStatus;
+    public void setReturnStatus(Byte returnStatus) {
+        this.returnStatus = returnStatus;
     }
 
     public String getComment() {

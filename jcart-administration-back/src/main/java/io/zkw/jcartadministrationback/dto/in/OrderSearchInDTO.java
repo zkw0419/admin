@@ -1,18 +1,11 @@
 package io.zkw.jcartadministrationback.dto.in;
 
 public class OrderSearchInDTO {
-    private Integer orderId;
+    private Long orderId;
     private String customerName;
     private Byte status;
     private Double totalPrice;
 
-    public Integer getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
-    }
 
     public String getCustomerName() {
         return customerName;
@@ -36,5 +29,13 @@ public class OrderSearchInDTO {
 
     public void setTotalPrice(Double totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 }

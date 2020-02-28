@@ -1,6 +1,6 @@
 package io.zkw.jcartadministrationback.dao;
 
-import io.zkw.jcartadministrationback.po.Order;
+import io.zkw.jcartadministrationback.pogo.Order;
 
 public interface OrderMapper {
     int deleteByPrimaryKey(Long orderId);
