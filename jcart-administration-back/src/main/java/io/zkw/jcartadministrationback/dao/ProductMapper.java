@@ -22,7 +22,6 @@ public interface ProductMapper {
 
     int updateByPrimaryKey(Product record);
 
-//    custom
 
     int batchDelete(@Param("productIds") List<Integer> productIds);
 

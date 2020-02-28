@@ -166,7 +166,6 @@
     where product_id = #{productId,jdbcType=INTEGER}
   </update>
 
-<!--  custom-->
   <delete id="batchDelete">
     delete from jcart_product
     where product_id in
