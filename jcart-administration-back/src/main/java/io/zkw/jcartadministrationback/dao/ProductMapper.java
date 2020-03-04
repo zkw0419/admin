@@ -2,7 +2,7 @@ package io.zkw.jcartadministrationback.dao;
 
 import com.github.pagehelper.Page;
 import io.zkw.jcartadministrationback.dto.out.ProductListOutDTO;
-import io.zkw.jcartadministrationback.pogo.Product;
+import io.zkw.jcartadministrationback.po.Product;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

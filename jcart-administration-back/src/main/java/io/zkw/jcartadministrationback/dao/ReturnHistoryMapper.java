@@ -1,6 +1,6 @@
 package io.zkw.jcartadministrationback.dao;
 
-import io.zkw.jcartadministrationback.pogo.ReturnHistory;
+import io.zkw.jcartadministrationback.po.ReturnHistory;
 
 public interface ReturnHistoryMapper {
     int deleteByPrimaryKey(Long returnHistoryId);

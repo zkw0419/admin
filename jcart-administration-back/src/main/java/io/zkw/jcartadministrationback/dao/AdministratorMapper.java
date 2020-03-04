@@ -1,7 +1,13 @@
 package io.zkw.jcartadministrationback.dao;
 
-import io.zkw.jcartadministrationback.pogo.Administrator;
+import com.github.pagehelper.Page;
+import io.zkw.jcartadministrationback.po.Administrator;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+@Repository
 public interface AdministratorMapper {
     int deleteByPrimaryKey(Integer administratorId);
 
@@ -14,4 +20,13 @@ public interface AdministratorMapper {
     int updateByPrimaryKeySelective(Administrator record);
 
     int updateByPrimaryKey(Administrator record);
+
+//    custom
+
+    Administrator selectByUsername(@Param("username") String username);
+
+    int batchDelete(@Param("administratorIds") List<Integer> administratorIds);
+
+    Page<Administrator> selectList();
+
 }

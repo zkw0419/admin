@@ -1,6 +1,6 @@
 package io.zkw.jcartadministrationback.dao;
 
-import io.zkw.jcartadministrationback.pogo.Return;
+import io.zkw.jcartadministrationback.po.Return;
 
 public interface ReturnMapper {
     int deleteByPrimaryKey(Integer returnId);

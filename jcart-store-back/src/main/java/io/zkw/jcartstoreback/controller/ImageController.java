@@ -14,4 +14,5 @@ public class ImageController {
     public String upload(@RequestParam MultipartFile image){
         return null;
     }
+
 }
