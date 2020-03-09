@@ -78,6 +78,7 @@ public class CustomerController {
         return customerShowOutDTO;
     }
 
+    @PostMapping("/setStatus")
     public void setStatus(@RequestBody CustomerSetStatusInDTO customerSetStatusInDTO){
         customerService.setStatus(customerSetStatusInDTO);
     }
