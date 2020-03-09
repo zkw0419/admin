@@ -1,7 +1,11 @@
 package io.zkw.jcartstoreback.dao;
 
+import com.github.pagehelper.Page;
 import io.zkw.jcartstoreback.po.Return;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ReturnMapper {
     int deleteByPrimaryKey(Integer returnId);
 
@@ -14,4 +18,7 @@ public interface ReturnMapper {
     int updateByPrimaryKeySelective(Return record);
 
     int updateByPrimaryKey(Return record);
+
+
+    Page<Return> selectPageByCustomerId(@Param("customerId") Integer customerId);
 }
