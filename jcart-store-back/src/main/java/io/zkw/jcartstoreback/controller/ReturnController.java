@@ -9,6 +9,7 @@ import io.zkw.jcartstoreback.dto.out.ReturnShowOutDTO;
 import io.zkw.jcartstoreback.enumeration.ReturnStatus;
 import io.zkw.jcartstoreback.po.Return;
 import io.zkw.jcartstoreback.po.ReturnHistory;
+import io.zkw.jcartstoreback.service.ReturnHistoryService;
 import io.zkw.jcartstoreback.service.ReturnService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +25,9 @@ public class ReturnController {
 
     @Autowired
     private ReturnService returnService;
+
+    @Autowired
+    private ReturnHistoryService returnHistoryService;
 
     @PostMapping("/apply")
     public Integer apply(@RequestBody ReturnApplyInDTO returnApplyInDTO,
